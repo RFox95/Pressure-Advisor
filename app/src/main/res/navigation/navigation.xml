@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/pressureTrackerFragment">
+
+    <fragment
+        android:id="@+id/pressureTrackerFragment"
+        android:name="com.example.underpressurea.pressuretracker.PressureTrackerFragment"
+        android:label="Pressure Advisor"
+        tools:layout="@layout/pressure_tracker_fragment" >
+        <action
+            android:id="@+id/action_pressureTrackerFragment_to_insertPressureFragment"
+            app:destination="@id/insertPressureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.underpressurea.AboutFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.underpressurea.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/insertPressureFragment"
+        android:name="com.example.underpressurea.pressureinsert.InsertPressureFragment"
+        android:label="Pressure Advisor"
+        tools:layout="@layout/insert_pressure_fragment">
+        <action
+            android:id="@+id/action_insertPressureFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:popUpTo="@+id/pressureTrackerFragment" />
+        <action
+            android:id="@+id/action_insertPressureFragment_to_pressureOkFragment"
+            app:destination="@id/pressureOkFragment"
+            app:popUpTo="@+id/pressureTrackerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.underpressurea.maps.MapsFragment"
+        android:label="Pressure Advisor"
+        tools:layout="@layout/maps_fragment" />
+    <fragment
+        android:id="@+id/pressureOkFragment"
+        android:name="com.example.underpressurea.pressureok.PressureOkFragment"
+        android:label="Pressure Advisor"
+        tools:layout="@layout/pressure_ok_fragment" />
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.example.underpressurea.TutorialFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_tutorial" />
+</navigation>

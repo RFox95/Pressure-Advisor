@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Pressure Advisor</string>
+
+    <!-- facebook login -->
+    <string name="facebook_application_id" translatable="false">***********************</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">*******************</string>
+    <string name="logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="info">Info</string>
+    <string name="add_bp">add value</string>
+    <string name="clear">delete all</string>
+    <string name="info_text">Pressure Advisor App permits you to save your blood
+        pressure values in a simple way. The data are saved remotely, not depending on the memory of your device.\n\nIf a pressure value is too high, this app tells you the pharmacies closest to you, wherever you are at any time.\n\nThanks for using PressureAdvisor App. Enjoy it!
+    </string>
+    <string name="bad_pressure_text">Your pressure is not so good.\nYou should go to the pharmacy</string>
+    <string name="title_activity_my_custom_app_intro">AppIntro</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="tutorial">Help</string>
+
+</resources>

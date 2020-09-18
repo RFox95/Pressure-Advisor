@@ -1,0 +1,133 @@
+/*
+ * Copyright 2019, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.android.underpressurea"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        //multiDexEnabled true
+        // Only English resources
+        resConfigs "en"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Enables data binding.
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Firebase Auth
+    implementation "com.google.firebase:firebase-auth:16.1.0"
+    implementation "com.google.firebase:firebase-core:16.0.6"
+    implementation "com.firebaseui:firebase-ui-auth:4.3.1"
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:6.2.0'
+
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+
+    // Support libraries
+    implementation "androidx.appcompat:appcompat:1.0.2"
+    implementation "androidx.fragment:fragment:1.0.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-alpha3"
+
+    // Android KTX
+    implementation 'androidx.core:core-ktx:1.0.1'
+
+    // Room and Lifecycle dependencies
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    // Navigation
+    implementation "android.arch.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //Maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+
+    //Material design
+    implementation 'com.android.support:design:28.0.0'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.7.1'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // AndroidX Capable version
+    implementation 'com.github.AppIntro:AppIntro:4.2.3'
+
+
+}

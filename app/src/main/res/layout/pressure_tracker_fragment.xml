@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Data to make available to the XML via data binding. In this case,
+         the whole ViewModel, so that we can access the LiveData,
+         click handlers, and state variables. -->
+    <data>
+        <variable
+            name="pressureTrackerViewModel"
+            type="com.example.underpressurea.pressuretracker.PressureTrackerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.underpressurea.pressuretracker.PressureTrackerFragment">
+
+        <!-- With data binding and LiveData, we can track the buttons' visibility states
+             from the ViewModel. The click handler is in the ViewModel as well, and
+             you can set it for the Views using this lambda pattern. -->
+
+        <!--android:onClick="@{() -> sleepTrackerViewModel.onStartTracking()}"
+        android:enabled="@{sleepTrackerViewModel.startButtonVisible}"-->
+
+
+        <Button
+            android:id="@+id/new_bp_button"
+            style="@style/PressureButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin32"
+            android:layout_marginEnd="16dp"
+            android:text="@string/add_bp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/clear_button"
+            style="@style/PressureButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin32"
+            android:text="@string/clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pressure_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/clear_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_bp_button" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_width="285dp"
+            android:layout_height="293dp"
+            app:layout_constraintBottom_toTopOf="@+id/clear_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pressure_list" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
